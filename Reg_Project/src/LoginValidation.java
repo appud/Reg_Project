@@ -22,7 +22,7 @@ public class LoginValidation extends HttpServlet
   
   if(ValidationDB.validate(n, p))
 	{
-		RequestDispatcher rd=request.getRequestDispatcher("welcome");
+		RequestDispatcher rd=request.getRequestDispatcher("Welcome");
 		rd.forward(request,response);
 	}
 	else

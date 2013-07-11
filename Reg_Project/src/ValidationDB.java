@@ -1,7 +1,7 @@
 import java.sql.*;
 public class ValidationDB
 {
-public static boolean ValidationDB(String name,String pass)
+public static boolean validate(String name,String pass)
 {
 boolean status=false;
 try {

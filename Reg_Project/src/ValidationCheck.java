@@ -25,7 +25,7 @@ public class ValidationCheck extends HttpServlet
 		 String email=request.getParameter("email");
 		 String address=request.getParameter("address");
 		 String gender=request.getParameter("gender");
-		 String skills=request.getParameter("skills");
+		 String skills[]=request.getParameterValues("skills");
 		 String education=request.getParameter("education");
 		 String resume=request.getParameter("resume");
 try
@@ -34,7 +34,12 @@ try
 	Class.forName("com.mysql.jdbc.Driver");
 	Connection con=DriverManager.getConnection("jdbc:mysql://192.168.0.108:3306/iyappan","root","olabsys@123");
 	Statement stmt=con.createStatement();
-	String sql="insert into iyap(username,password,age,email,gender,address,skills,education,resume)values('"+username+"','"+password+"',"+age+",'"+email+"','"+gender+"','"+address+"','"+skills+"','"+education+"','"+resume+"')";
+	String skill="";
+	for(int i=0;i<skills.length;i++)
+	{
+		skill=skill+skills[i];
+	}
+	String sql="insert into iyap(username,password,age,email,gender,address,skills,education,resume)values('"+username+"','"+password+"',"+age+",'"+email+"','"+gender+"','"+address+"','"+skill+"','"+education+"','"+resume+"')";
 	stmt.execute(sql);
 	RequestDispatcher rd=request.getRequestDispatcher("SuccessPage.html");
 	rd.forward(request,response);
