@@ -17,6 +17,7 @@ import java.sql.Statement;
 
 public class ValidationCheck extends HttpServlet
 {
+	String skill="";
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
 		 String username=request.getParameter("username");
@@ -34,7 +35,7 @@ try
 	Class.forName("com.mysql.jdbc.Driver");
 	Connection con=DriverManager.getConnection("jdbc:mysql://192.168.0.108:3306/iyappan","root","olabsys@123");
 	Statement stmt=con.createStatement();
-	String skill="";
+	
 	for(int i=0;i<skills.length;i++)
 	{
 		skill=skill+skills[i];
