@@ -43,9 +43,10 @@ public class ManagerLogin extends HttpServlet {
              
              ResultSet rs =  pst.executeQuery();
              while (rs.next()) {
-                 String username=(rs.getString("username"));             
+                 String username=(rs.getString("username"));  
+                 String password = (rs.getString("password"));
 
-                 if(username.equals(userName)){                     
+                 if(username.equals(userName)&& (password.equals(password))){                     
                 	 out.println("You are valid User");
 
                  }
