@@ -7,6 +7,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -48,6 +49,8 @@ public class ManagerLogin extends HttpServlet {
 
                  if(username.equals(userName)&& (password.equals(password))){                     
                 	 out.println("You are valid User");
+                		RequestDispatcher rd=request.getRequestDispatcher("InsertData.html");
+                		rd.forward(request,response);
 
                  }
                  else
