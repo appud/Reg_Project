@@ -29,7 +29,7 @@ public class ManagerLogin extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out=response.getWriter();
 		
-		out.println("Manager login ");
+		out.println("Manager logined ");
 		out.println("<br/>");
 		
 		String userName = request.getParameter("userName");
